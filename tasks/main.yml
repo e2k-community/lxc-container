@@ -6,8 +6,11 @@
     template: "{{ item.template }}"
     template_options: "{{ item.opts }}"
     backing_store: dir #loop
-    config:
-      - lxc.start.auto=1
+    container_config:
+      - "lxc.start.auto = 1"
+      - "lxc.net.0.type = veth"
+      - "lxc.net.0.link = lxcbr0"
+      - "lxc.net.0.flags = up"
   loop: "{{ containers }}"
 
 - name: Remove absent containers
