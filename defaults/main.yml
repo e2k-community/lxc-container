@@ -1,1 +1,8 @@
 ---
+containers: []
+#  - name: <container name>
+#    template: <template name>
+#    opts: <lxc-create options>
+#
+
+absent_containers: []
