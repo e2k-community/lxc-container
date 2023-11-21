@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: cyfive
+  description: Role for creating lxc containers on host
+  company: "e2k community"
+  license: "GNU GPL 3.0 or above"
+  min_ansible_version: "2.9"
+  platforms:
+  - name: EL
+    versions:
+      - all
+  - name: Debian
+    versions:
+      - all
+  - name: Ubuntu
+    versions:
+      - all
+  galaxy_tags:
+    - system

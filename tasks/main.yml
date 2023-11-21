@@ -1,0 +1,15 @@
+---
+- name: Create container
+  community.general.lxc_container:
+    name: "{{ LXC_CONTAINER_NAME }}"
+    state: started #absent
+    template: "{{ LXC_CONTAINER_TEMPLATE }}"
+    template_options: "{{ LXC_CONTAINER_TEMPLATE_OPTS }}"
+    backing_store: dir #loop
+    #config:
+    #  - lxc.start.auto=1
+
+#- name: Remove absent containers
+#  community.general.lxc_container:
+#    name: vm-test
+#    state: absent
