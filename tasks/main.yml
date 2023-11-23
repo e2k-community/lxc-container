@@ -7,9 +7,9 @@
     template_options: "{{ item.opts }}"
     backing_store: dir #loop
     container_config:
-      - "lxc.start.auto = 1"
-      - "lxc.net.0.type = veth"
-      - "lxc.net.0.link = lxcbr0"
+      - "lxc.start.auto = {{ item.lxc_start_auto | default('0') }}"
+      - "lxc.net.0.type = {{ item.lxc_net_type | lxc_default.lxc_net_type }}"
+      - "lxc.net.0.link = {{ item.lxc_net_link | lxc_default.lxc_net_link }}"
       - "lxc.net.0.flags = up"
   loop: "{{ containers }}"
 
